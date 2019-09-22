@@ -1,0 +1,4 @@
+#Thu Sep 19 00:22:09 WIB 2019
+base.0=/home/wido/jobs/itzeee/android/app/build/intermediates/transforms/r8/release/0
+path.0=classes.dex
+renamed.0=classes.dex
