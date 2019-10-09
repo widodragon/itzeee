@@ -5,7 +5,7 @@ import TextInputComp from '../../components/Auth/TextInputComp';
 import { NavigationActions, StackActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import {View,Input,Text, Spinner} from "native-base";
-import {getLogin} from '../../redux/actions/login';
+import {getLogin} from '../../redux/actions/auth';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {hp,wp} from '../../helpers/Responsive';
 class Login extends Component {
@@ -52,13 +52,14 @@ class Login extends Component {
         username:this.state.username,
         password:this.state.password,
       };
-      await this.props.dispatch(getLogin(data));
-      AsyncStorage.setItem('token', this.props.login.login.token);
-      const resetAction = StackActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: 'Dashboard' })],
-      });
-      this.props.navigation.dispatch(resetAction);
+      const src=await this.props.dispatch(getLogin(data));
+      console.warn(src)
+      // AsyncStorage.setItem('token', this.props.login.login.token);
+      // const resetAction = StackActions.reset({
+      //   index: 0,
+      //   actions: [NavigationActions.navigate({ routeName: 'Dashboard' })],
+      // });
+      // this.props.navigation.dispatch(resetAction);
       this.setState({isLoading:false})
     }catch(e){
       this.setState({isLoading:false})
@@ -70,9 +71,9 @@ class Login extends Component {
     return (
       <ImageBackground source={require('../../assets/auth_background.png')} style={styles.container}>
         <View style={{flex:0.3, justifyContent:"center", alignItems:"center", marginTop:hp(5)}}>
-          <Image source={require('../../assets/point.png')} style={{width:"50%",height:hp(30), resizeMode:"contain"}}/>
+          <Image source={require('../../assets/point.png')} style={{width:"25%",height:hp(15), resizeMode:"contain"}}/>
         </View>
-        <View style={{flex:0.7, marginTop:hp(-5)}}>
+        <View style={{flex:0.7, marginTop:hp(-6)}}>
           <View style={{width:wp(90), alignSelf:"center"}}>
             <View style={{justifyContent:"center", alignItems:"center",marginTop:hp(2), marginBottom:hp(5)}}>
               <Text style={{color:"white",fontFamily:'sans-serif-thin', fontSize:hp(2.5)}}>Selamat datang kembali!</Text>
@@ -97,7 +98,8 @@ class Login extends Component {
                   keyboardType="default"
                   placeholderTextColor="white"
                   underlineColorAndroid='transparent'
-                  onChangeText={(username) => this.setState({username})}
+                  secureTextEntry={true}
+                  onChangeText={(password) => this.setState({password})}
                 />
               </View>
               <View style={{flex:0.2, justifyContent:"center", alignItems:"center"}}>
@@ -134,7 +136,7 @@ class Login extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    login: state.login
+    auth: state.auth
   }
 }
 

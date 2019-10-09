@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import promotions from './promotions';
-import login from './login';
+import api from './api';
+import auth from './auth';
 
 const appReducer = combineReducers({
-  promotions,
-  login
+  api,
+  auth
 });
 
 export default appReducer;

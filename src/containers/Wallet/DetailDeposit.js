@@ -6,7 +6,7 @@ import {hp,wp, imgX, imgY} from '../../helpers/Responsive';
 import DashboardCard from '../../components/Dashboard/DashboardCard';
 import HeaderBar from '../../components/Dashboard/HeaderBar';
 import { Container, Spinner, Button, Header, Left, Thumbnail, Body, Right,Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import {getData} from '../../redux/actions/promotions';
+import {getData} from '../../redux/actions/api';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { NavigationActions, StackActions } from 'react-navigation';
 
@@ -86,7 +86,7 @@ class DetailDeposit extends Component {
       <Container style={{flex:1,backgroundColor:"#e3e1e1"}}>
         <View style={{flex:0.1, width:"90%", flexDirection:"row", paddingTop:hp(2), paddingBottom:hp(2), alignSelf:"center",borderRadius:hp(0.5), backgroundColor:"white", marginTop:hp(2)}}>
             <View style={{flex:0.2, justifyContent:"center", alignItems:"center"}}>
-              <View style={{width:imgX(20), height:imgY(20), borderRadius:imgY(10), justifyContent:"center", alignItems:"center", backgroundColor:"#e6eaf0"}}>
+              <View style={{width:50, height:50, borderRadius:25, justifyContent:"center", alignItems:"center", backgroundColor:"#e6eaf0"}}>
                 <Image source={require('../../assets/wallet.png')} style={{width:wp(5), height:hp(3), resizeMode:"cover"}} />
               </View>
             </View>

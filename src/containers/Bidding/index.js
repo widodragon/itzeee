@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {hp,wp} from '../../helpers/Responsive';
 import HeaderIcon from '../../components/Dashboard/HeaderIcon';
 import { Container, Tabs, Tab, Spinner, Button, Header, Left, Thumbnail, Body, Right,Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import {getReward} from '../../redux/actions/promotions';
+import {getReward} from '../../redux/actions/api';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { NavigationActions, StackActions } from 'react-navigation';
 import Penawaran from '../Offering';

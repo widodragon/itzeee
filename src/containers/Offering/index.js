@@ -5,9 +5,10 @@ import TextInputDefault from '../../components/Auth/TextInputDefault';
 import { NavigationActions, StackActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import {View,Input,Text, Card} from "native-base";
-import {getLogin} from '../../redux/actions/login';
+import {getLogin} from '../../redux/actions/auth';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {hp,wp, imgX, imgY} from '../../helpers/Responsive';
+import RNPickerSelect from 'react-native-picker-select';
 const penawaran=[
   {
     id:1,
@@ -122,12 +123,17 @@ class Penawaran extends Component {
               <View style={{flex:0.02, justifyContent:"center", alignItems:"center"}}>
               </View>
               <View style={{flex:0.95, justifyContent:"center"}}>
-                <Picker selectedValue = {this.state.religious} onValueChange = {this.updateReligious}>
-                   <Picker.Item color="grey" label = "Penawaran Terbaru" value = "penawaran" />
-                   <Picker.Item color="grey" label = "Otomotif" value = "otomotif" />
-                   <Picker.Item color="grey" label = "Teknologi" value = "teknologi" />
-                   <Picker.Item color="grey" label = "Kesehatan" value = "kesehatan" />
-                </Picker>
+                <RNPickerSelect
+                    onValueChange={(service)=>this.setState({service})}
+                    placeholder={{label:"Tipe Mitra"}}
+                    useNativeAndroidPickerStyle={false}
+                    textInputProps={{fontSize:hp(2)}}
+                    items={[
+                        { label: 'Otomotif', value: 'Penawaran Terbaru', color:"grey" },
+                        { label: 'Teknologi', value: 'teknologi', color:"grey" },
+                        { label: 'Kesehatan', value: 'kesehatan', color:"grey" },
+                    ]}
+                />
               </View>
               <View style={{flex:0.03}}></View>
             </View>

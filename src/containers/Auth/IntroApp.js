@@ -5,7 +5,6 @@ import TextInputComp from '../../components/Auth/TextInputComp';
 import { NavigationActions, StackActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import {View,Input,Text, Spinner} from "native-base";
-import {getLogin} from '../../redux/actions/login';
 import {hp,wp} from '../../helpers/Responsive';
 class IntroApp extends Component {
   constructor(props) {
@@ -20,14 +19,15 @@ class IntroApp extends Component {
   render() {
     return (
       <ImageBackground source={require('../../assets/auth_background.png')} style={styles.container}>
+        <View style={{flex:0.1}} />
         <View style={styles.bannerWrapper}>
-          <Image source={require('../../assets/point.png')} style={{width:"50%",height:hp(30), resizeMode:"contain"}}/>
+          <Image source={require('../../assets/point.png')} style={{width:"30%",height:hp(20), resizeMode:"contain"}}/>
           <View style={{justifyContent:"center", alignItems:"center", marginBottom:hp(5)}}>
             <Text style={{fontWeight:"bold", fontFamily: 'sans-serif-thin', color:"white", fontSize:hp(4)}}>Itzeee</Text>
             <Text style={{color:"white",fontFamily:'sans-serif-thin', fontSize:hp(2.5)}}>We make it easy</Text>
           </View>
         </View>
-        <View style={{flex:0.4, marginTop:hp(-2)}}>
+        <View style={{flex:0.35, marginTop:hp(-2)}}>
           <View style={{width:"85%", alignSelf:"center"}}>
             <View>
               {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     marginTop:hp(1)
   },
   bannerWrapper:{
-    flex:0.6, 
+    flex:0.55, 
     paddingTop:hp(5), 
     justifyContent:"center", 
     alignItems:"center"

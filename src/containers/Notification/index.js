@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {connect} from "react-redux";
 import {hp,wp} from '../../helpers/Responsive';
 import { Container, Spinner, Button, Header, Left, Thumbnail, Body, Right, Icon, Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import { updateCart, getMenu, addCart } from '../../redux/actions/promotions';
+import { updateCart, getMenu, addCart } from '../../redux/actions/api';
 
 class Notification extends Component {
   constructor(props) {
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    cart: state.promotions
+    cart: state.api
   }
 }
 

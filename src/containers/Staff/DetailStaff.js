@@ -6,7 +6,7 @@ import {hp,wp, imgX, imgY} from '../../helpers/Responsive';
 import DashboardCard from '../../components/Dashboard/DashboardCard';
 import HeaderBar from '../../components/Dashboard/HeaderBar';
 import { Container, Spinner, Button, Header, Left, Thumbnail, Body, Right,Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import {getData} from '../../redux/actions/promotions';
+import {getData} from '../../redux/actions/api';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { NavigationActions, StackActions } from 'react-navigation';
 import StarRating from 'react-native-star-rating';

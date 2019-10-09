@@ -5,7 +5,7 @@ import TextInputDefault from '../../components/Auth/TextInputDefault';
 import { NavigationActions, StackActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import {View,Input,Text} from "native-base";
-import {getLogin} from '../../redux/actions/login';
+import {getLogin} from '../../redux/actions/auth';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {hp,wp} from '../../helpers/Responsive';
 import RNPickerSelect from 'react-native-picker-select';
@@ -79,7 +79,7 @@ class RegStepOne extends Component {
                 <RNPickerSelect
                     onValueChange={(service)=>this.setState({service})}
                     placeholder={{label:"Service Level"}}
-                    useNativeAndroidPickerStyle={true}
+                    useNativeAndroidPickerStyle={false}
                     textInputProps={{fontSize:hp(2)}}
                     items={[
                         { label: 'Otomotif', value: 'otomotif', color:"grey" },

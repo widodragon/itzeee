@@ -6,7 +6,7 @@ import {hp,wp, imgX, imgY} from '../../helpers/Responsive';
 import DashboardCard from '../../components/Dashboard/DashboardCard';
 import HeaderBar from '../../components/Dashboard/HeaderBar';
 import { Container, Spinner, Button, Header, Left, Thumbnail, Body, Right,Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import {getData} from '../../redux/actions/promotions';
+import {getData} from '../../redux/actions/api';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { NavigationActions, StackActions } from 'react-navigation';
 import StarRating from 'react-native-star-rating';
@@ -158,7 +158,7 @@ class Profile extends Component {
         </View>
         <View style={{position:"absolute", height:hp(30), borderRadius:hp(1), backgroundColor:"white", width:"90%", alignSelf:"center", top:hp(17)}}>
           <TouchableNativeFeedback style={{paddingTop:hp(5),paddingBottom:hp(5)}} onPress={()=>{this.onExit()}}>
-            <View style={{top:"-20%", alignSelf:"center", width:imgX(40), height:imgY(40), borderRadius:imgY(20), position:"absolute", backgroundColor:"grey"}}>
+            <View style={{top:"-20%", alignSelf:"center", width:80, height:80, borderRadius:40, position:"absolute", backgroundColor:"grey"}}>
             </View>
           </TouchableNativeFeedback>
           <View style={{flexDirection:"column", marginTop:hp(8)}}>
@@ -189,7 +189,7 @@ class Profile extends Component {
                   renderItem={({item}) =>
                   <View>
                     <TouchableNativeFeedback onPress={() =>{}} >
-                      <View style={{width:imgX(15), marginRight:hp(1), justifyContent:"center", alignItems:"center", height:imgY(15), borderRadius:imgY(7.5), backgroundColor:"blue"}}> 
+                      <View style={{width:30, marginRight:hp(1), justifyContent:"center", alignItems:"center", height:30, borderRadius:15, backgroundColor:"blue"}}> 
                         <Icon name={item.name} size={hp(3)} color="white" />
                       </View>
                     </TouchableNativeFeedback>

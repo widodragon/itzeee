@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import TextInputComp from '../../components/Profile/TextInputComp';
 import HeaderIcon from '../../components/Dashboard/HeaderIcon';
 import { Container, Spinner, Button, Header, Left, Thumbnail, Body, Right,Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import {getProfile} from '../../redux/actions/login';
+import {getProfile} from '../../redux/actions/auth';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { NavigationActions, StackActions } from 'react-navigation';
 

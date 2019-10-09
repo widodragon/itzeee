@@ -91,7 +91,7 @@ def enableSeparateBuildPerCPUArchitecture = false
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
-def enableProguardInReleaseBuilds = true
+def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -102,7 +102,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.itzeee"
+        applicationId "com.mitraitzeee"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -149,11 +149,11 @@ android {
 }
 
 dependencies {
-    implementation project(':@react-native-community_slider')
-    implementation project(':react-native-document-picker')
-    implementation project(':react-native-reanimated')
     implementation project(':react-native-vector-icons')
+    implementation project(':react-native-reanimated')
     implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-document-picker')
+    implementation project(':@react-native-community_slider')
     implementation project(':@react-native-community_netinfo')
     implementation project(':@react-native-community_async-storage')
     implementation fileTree(dir: "libs", include: ["*.jar"])

@@ -5,7 +5,7 @@ import TextInputDefault from '../../components/Auth/TextInputDefault';
 import { NavigationActions, StackActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import {View,Input,Text} from "native-base";
-import {getLogin} from '../../redux/actions/login';
+import {getLogin} from '../../redux/actions/auth';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {hp,wp, imgX,imgY} from '../../helpers/Responsive';
 class RegStepTwo extends Component {
@@ -312,25 +312,25 @@ const styles = StyleSheet.create({
     backgroundColor:"#e3e1e1",
   },
   circle_wrap:{
-    width:imgX(55),
-    height:imgY(55), 
-    borderRadius:imgY(55/2), 
+    width:100,
+    height:100, 
+    borderRadius:50, 
     backgroundColor:"blue", 
     justifyContent:"center", 
     alignItems:"center"
   },
   circle:{
-    width:imgX(50),
-    height:imgY(50), 
-    borderRadius:imgY(25), 
+    width:98,
+    height:98, 
+    borderRadius:49, 
     backgroundColor:"#7fa8b5", 
     justifyContent:"center", 
     alignItems:"center"
   },
   active_circle:{
-    width:imgX(50),
-    height:imgY(50), 
-    borderRadius:imgY(25), 
+    width:98,
+    height:98, 
+    borderRadius:49, 
     backgroundColor:"yellow", 
     justifyContent:"center", 
     alignItems:"center"   

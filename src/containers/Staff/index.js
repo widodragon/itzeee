@@ -5,7 +5,7 @@ import TextInputDefault from '../../components/Auth/TextInputDefault';
 import { NavigationActions, StackActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import {View,Input,Text,SwipeRow, Content, Button, Header, Left, Body, Right,} from "native-base";
-import {getLogin} from '../../redux/actions/login';
+import {getLogin} from '../../redux/actions/auth';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {hp,wp,imgX, imgY} from '../../helpers/Responsive';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
@@ -125,12 +125,12 @@ class Staff extends Component {
                 right={
                   <View style={{marginRight:wp(5), marginTop:hp(6.5), flexDirection:"row"}}>
                     <TouchableOpacity onPress={()=>this.props.navigation.navigate('ChangeStaff')}>
-                      <View style={{width:imgX(14), height:imgY(14), borderRadius:imgY(7), justifyContent:"center", alignItems:"center", backgroundColor:"blue"}}>
+                      <View style={{width:38, height:38, borderRadius:19, justifyContent:"center", alignItems:"center", backgroundColor:"blue"}}>
                         <Icon name="edit" size={hp(2)} color="white" />
                       </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={{marginLeft:wp(1)}} onPress={()=>this.setState({dialogVisible:true})}>
-                      <View style={{width:imgX(14), height:imgY(14), borderRadius:imgY(7), justifyContent:"center", alignItems:"center", backgroundColor:"red"}}>
+                      <View style={{width:38, height:38, borderRadius:19, justifyContent:"center", alignItems:"center", backgroundColor:"red"}}>
                         <Icon name="trash" size={hp(2)} color="white" />
                       </View>
                     </TouchableOpacity>

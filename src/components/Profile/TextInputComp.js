@@ -4,7 +4,7 @@ import {Alert, StyleSheet, TextInput, Image, TouchableOpacity} from 'react-nativ
 import { NavigationActions, StackActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import {View,Input,Text} from "native-base";
-import {getLogin} from '../../redux/actions/login';
+import {getLogin} from '../../redux/actions/auth';
 class TextInputComp extends Component {
   render() {
     let {title,style,keyboardType,underlineColorAndroid,onChangeText}=this.props;

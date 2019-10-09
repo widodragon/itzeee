@@ -6,7 +6,7 @@ import {hp,wp,imgX,imgY} from '../../helpers/Responsive';
 import DashboardCard from '../../components/Dashboard/DashboardCard';
 import HeaderBar from '../../components/Dashboard/HeaderBar';
 import { Container, Spinner, Button, Header, Left, Thumbnail, Body, Right,Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import {getData} from '../../redux/actions/promotions';
+import {getData} from '../../redux/actions/api';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { NavigationActions, StackActions } from 'react-navigation';
 import Dialog, { DialogContent, ScaleAnimation, DialogFooter, DialogButton } from 'react-native-popup-dialog';
@@ -99,7 +99,7 @@ class Dashboard extends Component {
                   <TouchableNativeFeedback onPress={
                     item.status==1?() =>this.props.navigation.navigate("DetailBidding"):item.status==3?() =>this.props.navigation.navigate("ProofDelivery"):item.status==2?()=>this.setState({visible:true}):null
                   } >
-                    <View style={{flex:1, marginBottom:hp(2), borderRadius:hp(1), backgroundColor:"white", flexDirection:"row", paddingBottom:hp(2), paddingTop:hp(2)}}>
+                    <View style={{flex:1, marginBottom:hp(2), borderRadius:hp(1), backgroundColor:"white", flexDirection:"row", paddingBottom:hp(2), paddingTop:hp(2), elevation:2}}>
                       <View style={{flex:0.2, justifyContent:"center", alignItems:"center"}}>
                         <Icon name={item.icon} size={hp(3)} color="blue" light />
                       </View>

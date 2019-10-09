@@ -6,7 +6,7 @@ import {hp,wp} from '../../helpers/Responsive';
 import DashboardCard from '../../components/Dashboard/DashboardCard';
 import HeaderBar from '../../components/Dashboard/HeaderBar';
 import { Container, Spinner, Button, Header, Left, Thumbnail, Body, Right,Title, Text, View, Content, Footer, Card, CardItem } from 'native-base';
-import {getData} from '../../redux/actions/promotions';
+import {getData} from '../../redux/actions/api';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { NavigationActions, StackActions } from 'react-navigation';
 
@@ -74,7 +74,7 @@ class Wallet extends Component {
   render() {
     return (
       <Container style={{flex:1}}>
-        <View style={{flex:0.3, width:"100%", backgroundColor:"blue", height:hp(300)}}>
+        <View style={{flex:0.3, width:"100%", backgroundColor:"#0969A5", height:hp(300)}}>
           <View style={{top:"20%",flexDirection:"row", alignSelf:"center", position:"absolute"}}>
             <Text style={{fontSize:hp(2.5), color:"white"}}>Itzeee Wallet</Text>
           </View>
